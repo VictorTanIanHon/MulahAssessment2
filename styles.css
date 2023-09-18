@@ -1,0 +1,32 @@
+table {
+    table-layout: fixed;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 3px solid black;
+  }
+
+th {
+    text-align: center;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+}
+
+td {
+    text-align: center;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+}
+
+tr:nth-child(odd){
+    background-color: gainsboro;
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+}
