@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mulah Assessment 2</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <h1>Headlines from Jan 2022</h1>         
+    </main>
+    <table>
+        <script>
+            onload = fetch("scraped_data.csv").then(res => {
+            return res.text()
+        }).then(data => {
+            let result = data.split(/\r?\n|\r/).map(e => {
+                return e.split("|")
+            })
+            result.forEach(e => {
+                let m = e.map(e => {
+                    return `<td>${e}</td>`;
+                }).join("")
+                let ce = document.createElement("tr");
+                ce.innerHTML = m;
+                if (ce.innerText != "") {
+                    document.querySelector("table").appendChild(ce);
+                }
+                // console.log(m);
+
+            })
+        })
+    </script>
+        </script>
+
+    </table>
+  </body>
+</html>
